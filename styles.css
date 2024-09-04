@@ -1,0 +1,219 @@
+		
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/*basic reset*/
+
+
+
+body {
+font-family: system-ui, sans-serif;
+
+}
+
+#form{
+/* Setup */
+max-width: 600px;
+margin: auto;;
+position: relative;
+}
+
+fieldset{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+border: 1px saddlebrown thin;
+margin-top: 12%;
+}
+
+
+#form fieldset {
+/*stacking fieldsets above each other*/
+position: absolute;
+
+}
+/*Hide all except first fieldset*/
+#form fieldset:not(:first-of-type) {
+display: none;
+}
+
+/*progressbar*/
+#progressbar {
+margin-top:1.5em;
+margin-bottom: 2rem;
+}
+#progressbar {
+/*CSS counters to number the steps*/
+counter-reset: step;
+}
+#progressbar li {
+list-style-type: none;
+color: black;
+text-transform: uppercase;
+font-size: 14px;
+float: left;
+
+}
+#progressbar li:before {
+content: counter(step);
+counter-increment: step;
+color: #333;
+font-size: 36px;
+margin:25px;
+padding: 5px;
+}
+/*progressbar connectors*/
+
+#progressbar li:after {
+content: '';
+width: 100%;
+position: absolute;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+background: #67d5bf;
+color: white;
+}
+
+input[type="button"], button {
+background-color:rebeccapurple; /* Warna teks pada card */
+padding: 10px;
+border: none;
+width: 100px;
+margin: 10px;
+padding: 15px px;
+border-radius: 4px;
+transition: background-color 0.3s ease-in-out;
+color:white;
+cursor: pointer;
+}
+
+.fieldset1 , .fieldset2{
+padding:60px;
+line-height: 1.5;
+box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+border-radius: 20px;
+}
+
+/*  */
+span{
+margin-bottom: 20px;
+}
+.row {
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+.row:before {
+position: absolute;
+content: "";
+display: block;
+top: 0;
+z-index: -1;
+background: inherit;
+}
+.row:first-child {
+padding: 20px 20px;
+}
+
+
+.row span {
+position: relative;
+display: inline-block;
+}
+.basic-slide {
+display: inline-block;
+width: 365px;
+padding: 10px 0 10px 60px;
+font-family: "Open Sans", sans;
+font-weight: 400;
+color: #377d6a;
+background: #fffdfd;
+border: 0;
+border-radius: 3px;
+outline: 0;
+text-indent: 70px;
+transition: all 0.3s ease-in-out;
+}
+.basic-slide::-webkit-input-placeholder {
+color: #efefef;
+text-indent: 0;
+font-weight: 300;
+}
+.basic-slide + label {
+display: inline-block;
+position: absolute;
+top: 0;
+left: 0;
+padding: 8px 15px;
+text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+transition: all 0.3s ease-in-out;
+border: none;
+background-color: turquoise;
+width:80px;
+
+}
+.basic-slide:focus, .basic-slide:active {
+color: #377d6a;
+text-indent: 0;
+background: #fff;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+}
+.basic-slide:focus::-webkit-input-placeholder, .basic-slide:active::-webkit-input-placeholder {
+color: #aaa;
+}
+.basic-slide:focus + label, .basic-slide:active + label {
+transform: translateX(-50%);
+}
+.clean-slide {
+position: relative;
+display: inline-block;
+width: 115px;
+padding: 10px 0 10px 15px;
+font-family: "Open Sans", sans;
+font-weight: 400;
+color: #377d6a;
+border: 0;
+border-radius: 3px;
+outline: 0;
+text-indent: 60px;
+transition: all 0.3s ease-in-out;
+
+}
+.clean-slide::-webkit-input-placeholder {
+color: #b7b1b1;
+text-indent: 0;
+font-weight: 300;
+}
+.clean-slide + label {
+display: inline-block;
+position: absolute;
+transform: translateX(0);
+top: 0;
+left: 0;
+bottom: 0;
+padding: 13px 15px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+color: #032429;
+text-align: left;
+text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+transition: all 0.3s ease-in-out, color 0.3s ease-out;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+overflow: hidden;
+
+}
+/*  */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+font-size:15px;
+background-color:rgb(244, 227, 204);
+padding:100px;
+color: black;
+
+}
+
